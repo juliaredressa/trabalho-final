@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+      body {
+          background-color: #ffffff;
+          font-family: Arial, sans-serif;
+      }
+      div {
+          width: 300px;
+          margin: 0 auto;
+          padding: 20px;
+          background-color: #de3163;
+          border-radius: 8px;
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      h1 {
+          text-align: center;
+          color: #ffffff;
+      }
+      label {
+          color: #ffffff;
+      }
+      input[type="text"],
+      input[type="password"],
+      button {
+          width: 100%;
+          padding: 8px;
+          margin-bottom: 10px;
+          border: none;
+          border-radius: 4px;
+      }
+      input[type="text"],
+      input[type="password"] {
+          background-color: #ffffff;
+      }
+      button {
+          background-color: #ffffff;
+          color: #de3163;
+          cursor: pointer;
+      }
+      button:hover {
+          background-color: #ff9999;
+      }
+  </style>
+    <title>LOGIN</title>
+</head>
+<body>
+    <div>
+        <form action='/login' method='POST' novalidate>
+            <h1>LOGIN</h1>
+            <div>
+              <label for="usuario">Usuario:</label> <br>
+              <input type="text" id="usuario" name="usuario" required>
+            </div> <br>
+            <div >
+              <label for="senha">Senha:</label> <br>
+              <input type="password" id="senha" name="senha" required>
+            </div> <br>
+            <div>
+              <button type="submit" >LOGIN</button>
+            </div>
+          </form>
+    </div>
+    <script>
+        (function() {
+            'use strict'
+            var forms = document.querySelectorAll('.needs-validation')
+            const form = forms[0];
+            form.addEventListener('submit', (event) => {
+                if (!form.checkValidity()) {
+                event.preventDefault();
+                event.stopPropagation();
+                }
+            form.classList.add('was-validated')
+             });
+            })();
+    </script>
+</body>
+</html>
